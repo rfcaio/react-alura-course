@@ -1,8 +1,8 @@
 import React from 'react'
 
 class AuthorForm extends React.Component {
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
     this.state = { email: '', name: '' }
   }
 
@@ -13,7 +13,9 @@ class AuthorForm extends React.Component {
 
   onSubmitForm (event) {
     event.preventDefault()
-    console.log(this.state)
+    let { email, name } = this.state
+    this.props.onAddAuthor({ email, name })
+    this.setState({ email: '', name: '' })
   }
 
   render () {

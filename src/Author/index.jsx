@@ -9,11 +9,17 @@ class Author extends React.Component {
     this.state = { authors: props.authors }
   }
 
+  addAuthor ({ email, name }) {
+    this.setState(({ authors }) => {
+      return { authors: [...authors, { id: Date.now(), email, name }] }
+    })
+  }
+
   render () {
     let { authors } = this.state
     return (
       <div>
-        <AuthorForm />
+        <AuthorForm onAddAuthor={author => { this.addAuthor(author) }} />
         <AuthorTable authors={authors} />
       </div>
     )
