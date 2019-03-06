@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import Author from './Author'
+import Home from './Home'
 
 const authors = [
   { id: 1, name: 'Michael Moorcock', email: 'michael.moorcock@mail.com' },
@@ -11,8 +12,7 @@ const authors = [
 
 const App = () => (
   <main>
-    <h1>A simple React app.</h1>
-
+    <Home />
     <section>
       <Author authors={authors} />
     </section>
