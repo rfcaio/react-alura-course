@@ -3,10 +3,16 @@ import React from 'react'
 import AuthorForm from './AuthorForm'
 import AuthorTable from './AuthorTable'
 
+const authors = [
+  { id: 1, name: 'Michael Moorcock', email: 'michael.moorcock@mail.com' },
+  { id: 2, name: 'Robert E. Howard', email: 'robert.e.howard@mail.com' },
+  { id: 3, name: 'H. P. Lovecraft', email: 'h.p.lovecraft@mail.com' }
+]
+
 class Author extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = { authors: props.authors }
+  constructor () {
+    super()
+    this.state = { authors }
   }
 
   addAuthor ({ email, name }) {
