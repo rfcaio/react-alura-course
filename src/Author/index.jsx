@@ -25,6 +25,7 @@ class Author extends React.Component {
     let { authors } = this.state
     return (
       <div>
+        <h1>Authors</h1>
         <AuthorForm onAddAuthor={author => { this.addAuthor(author) }} />
         <AuthorTable authors={authors} />
       </div>
